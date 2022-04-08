@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="funcionesIniciales()">
+
+    <div class="w-100 flex-column align-center">
+        <div class="flex-column w60">
+            <div id="botones" class="flex-row mt50 flex-between">
+                <a id="bIntel" onclick="filtrarByProperty('INTEL')" class="font aqua" href="javascript:void(0)">Procesadores Intel</a>
+                <a id="bAMD" onclick="filtrarByProperty('AMD')"     class="font aqua" href="javascript:void(0)">Procesadores AMD</a>
+                <a id="bRefrigeración" onclick="filtrarByProperty('REFRIGERACIÓN')" class="font aqua" href="javascript:void(0)">Refrigeración líquida</a>
+                <a id="bCooler" onclick="filtrarByProperty('COOLER')" class="font aqua" href="javascript:void(0)">Cooler Procesadores</a>
+            </div>
+
+            <select onchange="sortBy()" name="" id="select">
+                <option value="" hidden>Seleccione</option>
+                <option value="MV">Más vendidos</option>
+                <option value="RE">Relevancia</option>
+                <option value="AZ">Nombres de la A-Z</option>
+                <option value="ZA">Nombres de la Z-A</option>
+                <option value="MN">Precio de mayor a menor</option>
+                <option value="NM">Precio de menor a mayor</option>
+            </select>
+
+            <br>
+
+            <div>
+                <a class="hiper" id="modalCarro" onclick="abrirModalCarrito()" href="javascript:void(0)"> <span>N° Productos /</span> <span>Suma de productos</span> </a>
+            </div>
+
+            <div id="container" class="mt150 flex-row flex-wrap">
+                <!-- <div class="w100">
+                    <div class="border w25 flex-column">
+                        <img class="imagen" src="https://www.sercoplus.com/28702-home_default/refrigeracion-liquida-silverstone-pf120.jpg" alt="">
+                        <div class="tituloProducto flex-row justify-center">titulo del producto</div>
+                        <div class="flex-row align-center">
+                            <div class="flex-column mt5 p10">
+                                <label class="precios" for="">precio en dolares</label>
+                                <label class="precios" for="">precio en soles</label>
+                                <label class="normal" for="">Stock <span>10</span></label>
+                                <label class="normal" for="">Ref <span>a</span></label>
+                            </div>
+                            <button class="button">Comprar</button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="display-none"  id="contdos">
+                <div class="wrapper" >
+                    <div class="loader-container" id="load">
+                        <div class="loader"></div>
+                        <div class="loader2"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="modal-carrito display-none " id="carrito">
+        
+       <div class="flex-end opc1">
+           <div class="bk-white flex-column minwidth">
+               <div class="flex-row borb">
+                    <div class="mr10 p10 flex-row align-center"  >
+                        <a onclick="cerrarModalCarro()" class="a" href="javascript:void(0)">X</a>
+                    </div> 
+                    <div class="flex-row w100 justify-center  p10"> 
+                        <label class="label" for="">CARRITO</label>                            
+                    </div>
+               </div>
+
+               <div class="flex-column ">
+                    <div class="flex-column " id="productoCarro">      
+                        <!-- <div class="flex-row p10 align-center">
+                            <img src="" alt=""> 
+                            <div class="flex-column">
+                                <label class="label" for="">TITULO</label>
+                                <div class="mt10">
+                                    <label class="precios" for=""> <span class="precios">S/</span> Precio </label>                
+                                    <span class="label">x</span> 
+                                    <label class="labelCantidad" for="">Cantidad</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-end w100 p10">
+                            <button class="boton">Eliminar</button>
+                        </div> -->
+
+                    </div>
+               </div>     
+           </div>
+       </div>
+    </div>
+
+    <script src="js.js"></script>
+</body>
+</html>
